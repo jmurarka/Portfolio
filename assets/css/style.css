@@ -1,0 +1,337 @@
+/* ====================
+   BASE STYLES
+==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ====================
+     HEADER & NAVBAR
+  ==================== */
+header {
+  background: #ffffff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav .nav-link.active {
+  color: #007bff;
+}
+
+.theme-toggle {
+  background-color: #007bff; /* Updated toggle button color */
+  color: white; /* White text for toggle button */
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* ====================
+     HERO SECTION
+  ==================== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 0;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+.hero-img img {
+  max-width: 300px;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+}
+
+/* ====================
+     ABOUT SECTION
+  ==================== */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-img img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+/* ====================
+     SKILLS
+  ==================== */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skill {
+  background-color: #e9ecef;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+/* ====================
+     PROJECTS
+  ==================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.project-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.project-card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+/* ====================
+     CONTACT FORM
+  ==================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+input,
+textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+button.btn {
+  padding: 0.8rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
+
+/* ====================
+     FOOTER
+  ==================== */
+.footer {
+  background: #f1f1f1;
+  padding: 1.5rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.social-links a {
+  margin: 0 0.5rem;
+  color: #555;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+/* ====================
+     RESPONSIVE
+  ==================== */
+@media (max-width: 768px) {
+  .hero,
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    display: none; /* JS will toggle this */
+  }
+
+  .nav.active ul {
+    display: flex;
+  }
+
+  .theme-toggle {
+    margin-left: 1rem;
+  }
+}
+
+/* ====================
+   DARK MODE - Better Contrast
+==================== */
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body[data-theme="dark"] header {
+  background-color: #1f1f1f;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+}
+
+body[data-theme="dark"] .nav a {
+  color: #e0e0e0;
+}
+
+body[data-theme="dark"] .nav a:hover,
+body[data-theme="dark"] .nav .nav-link.active {
+  color: #90caf9;
+}
+
+body[data-theme="dark"] .project-card,
+body[data-theme="dark"] .skill,
+body[data-theme="dark"] .about-img img,
+body[data-theme="dark"] .hero-img img,
+body[data-theme="dark"] input,
+body[data-theme="dark"] textarea {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+body[data-theme="dark"] .project-card h3,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] p {
+  color: #e0e0e0;
+}
+
+body[data-theme="dark"] .btn {
+  background-color: #90caf9;
+  color: #121212;
+}
+
+body[data-theme="dark"] .btn:hover {
+  background-color: #64b5f6;
+}
+
+body[data-theme="dark"] .footer {
+  background-color: #1f1f1f;
+}
+
+body[data-theme="dark"] .social-links a {
+  color: #bbbbbb;
+}
+
+body[data-theme="dark"] .social-links a:hover {
+  color: #90caf9;
+}
